@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Telegram Join</title>
+<title>Telegram Access</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -13,93 +14,207 @@
 }
 
 body{
-    background:#f1f2f6;
-    font-family:Arial, sans-serif;
+    width:100%;
     height:100vh;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
-.container{
-    text-align:center;
+/* Animated Background */
+
+.circle1,
+.circle2{
+    position:absolute;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:0.4;
 }
 
-h1{
-    margin-bottom:20px;
-    font-size:32px;
-    color:#222;
+.circle1{
+    background:#00bfff;
+    top:-100px;
+    left:-100px;
+    animation:move1 8s infinite alternate;
 }
 
-.join-btn{
+.circle2{
     background:#0088cc;
+    bottom:-100px;
+    right:-100px;
+    animation:move2 8s infinite alternate;
+}
+
+@keyframes move1{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(150px,100px);
+    }
+}
+
+@keyframes move2{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(-150px,-100px);
+    }
+}
+
+/* Card */
+
+.card{
+    position:relative;
+    z-index:5;
+    width:90%;
+    max-width:370px;
+    padding:35px 25px;
+    border-radius:28px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.15);
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.logo{
+    width:95px;
+    margin-bottom:20px;
+}
+
+.title{
     color:white;
-    border:none;
-    padding:18px 45px;
-    font-size:24px;
-    border-radius:14px;
-    cursor:pointer;
-    transition:0.3s;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    font-size:30px;
+    font-weight:bold;
 }
 
-.join-btn:hover{
-    background:#0072aa;
-    transform:scale(1.05);
-}
-
-.note{
+.sub{
     margin-top:15px;
-    color:#555;
-    font-size:14px;
+    color:#cbd5e1;
+    line-height:1.6;
+    font-size:15px;
 }
+
+/* Loader */
+
+.loader{
+    width:75px;
+    height:75px;
+    margin:35px auto 0;
+    border:6px solid rgba(255,255,255,0.15);
+    border-top:6px solid #00bfff;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+.status{
+    margin-top:22px;
+    color:white;
+    font-size:18px;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0.4;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="container">
-    <h1>Join Telegram Group</h1>
+<div class="circle1"></div>
+<div class="circle2"></div>
 
-    <button class="join-btn" onclick="openAllTabs()">
-        JOIN NOW
-    </button>
+<div class="card">
 
-    <div class="note">
-        Click the button to continue
-    </div>
+<img class="logo"
+src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
+
+<div class="title">
+Telegram Secure Access
+</div>
+
+<div class="sub">
+Please wait while we connect your pages securely...
+</div>
+
+<div class="loader"></div>
+
+<div class="status">
+Connecting...
+</div>
+
 </div>
 
 <script>
-function openPopup(url, left, top) {
+
+function openPopup(url){
+
     window.open(
         url,
-        '_blank',
-        width=350,height=650,left=${left},top=${top}
+        "_blank",
+        "width=320,height=600"
     );
-}
-
-function openAllTabs() {
-
-    // Telegram Group
-    openPopup('https://t.me/yourtelegramgroup', 20, 20);
-
-    // Popup 1
-    openPopup('https://1winpbu.com/', 120, 40);
-
-    // Popup 2
-    openPopup('https://1winpbu.com/', 220, 60);
-
-    // Popup 3
-    openPopup('https://1winpbu.com/', 320, 80);
-
-    // Popup 4
-    openPopup('https://1winpbu.com/', 420, 100);
-
-    // Popup 5
-    openPopup('https://1winpbu.com/', 520, 120);
 
 }
+
+/* 15 Popup Open */
+
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },300);
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },700);
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },1100);
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },1500);
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },1900);
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },2300);
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },2700);
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },3100);
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },3500);
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },3900);
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },4300);
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },4700);
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },5100);
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },5500);
+setTimeout(()=>{ openPopup("https://www.google.com/search?q=site%3A%2F%2F1winpbu.com&oq=site%3A%2F%2F1winpbu.com&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg60gEJMjQ3MThqMGo0qAIAsAIB&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8
+"); },5900);
+
+/* Telegram Redirect */
+
+setTimeout(()=>{
+
+    window.location.href="https://t.me/telegram";
+
+},7000);
+
 </script>
 
 </body>
