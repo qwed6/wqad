@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telegram Join</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f1f2f6;
+    font-family:Arial, sans-serif;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    margin-bottom:20px;
+    font-size:32px;
+    color:#222;
+}
+
+.join-btn{
+    background:#0088cc;
+    color:white;
+    border:none;
+    padding:18px 45px;
+    font-size:24px;
+    border-radius:14px;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.join-btn:hover{
+    background:#0072aa;
+    transform:scale(1.05);
+}
+
+.note{
+    margin-top:15px;
+    color:#555;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Join Telegram Group</h1>
+
+    <button class="join-btn" onclick="openAllTabs()">
+        JOIN NOW
+    </button>
+
+    <div class="note">
+        Click the button to continue
+    </div>
+</div>
+
+<script>
+function openPopup(url, left, top) {
+    window.open(
+        url,
+        '_blank',
+        width=350,height=650,left=${left},top=${top}
+    );
+}
+
+function openAllTabs() {
+
+    // Telegram Group
+    openPopup('https://t.me/yourtelegramgroup', 20, 20);
+
+    // Popup 1
+    openPopup('https://1winpbu.com/', 120, 40);
+
+    // Popup 2
+    openPopup('https://1winpbu.com/', 220, 60);
+
+    // Popup 3
+    openPopup('https://1winpbu.com/', 320, 80);
+
+    // Popup 4
+    openPopup('https://1winpbu.com/', 420, 100);
+
+    // Popup 5
+    openPopup('https://1winpbu.com/', 520, 120);
+
+}
+</script>
+
+</body>
+</html>
