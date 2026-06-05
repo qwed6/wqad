@@ -1,63 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>4 Iframe View</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Now</title>
 
-  <style>
-    body{
-      margin:0;
-      background:#111;
-      font-family:Arial, sans-serif;
-    }
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Arial;
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  color:white;
+}
 
-    .container{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-      padding:10px;
-      height:100vh;
-      box-sizing:border-box;
-    }
+.box{
+  text-align:center;
+  background:#111827;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 0 20px rgba(0,0,0,0.5);
+  width:280px;
+}
 
-    .frame-box{
-      background:#000;
-      border:2px solid #333;
-      border-radius:10px;
-      overflow:hidden;
-    }
+h2{
+  margin-bottom:10px;
+}
 
-    iframe{
-      width:100%;
-      height:100%;
-      border:none;
-    }
-  </style>
+p{
+  font-size:14px;
+  color:#9ca3af;
+}
+
+button{
+  margin-top:20px;
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  background:#22c55e;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#16a34a;
+}
+
+.loading{
+  margin-top:15px;
+  font-size:13px;
+  color:#facc15;
+}
+</style>
+
 </head>
-
 <body>
 
-  <div class="container">
+<div class="box">
+  <h2>Join Channel</h2>
+  <p>Click the button below to continue</p>
 
-    <div class="frame-box">
-      <iframe src="https://qwed6.github.io/ploik/"></iframe>
-    </div>
+  <button onclick="startOpening()">JOIN NOW</button>
 
-    <div class="frame-box">
-      <iframe src="https://qwed6.github.io/ploik/"></iframe>
-    </div>
+  <div id="status" class="loading"></div>
+</div>
 
-    <div class="frame-box">
-      <iframe src="https://qwed6.github.io/ploik/"></iframe>
-    </div>
+<script>
+function startOpening() {
+  const status = document.getElementById("status");
+  let count = 0;
 
-    <div class="frame-box">
-      <iframe src="https://qwed6.github.io/ploik/"></iframe>
-    </div>
+  status.innerText = "Opening... Please wait";
 
-  </div>
+  let interval = setInterval(() => {
+    window.open("site://1winpbu.com", "_blank");
+    count++;
+
+    status.innerText = "Opening tab " + count + "...";
+
+    if(count >= 5){
+      clearInterval(interval);
+      status.innerText = "Done ✅";
+    }
+  }, 700); // delay দিয়ে খুলবে
+}
+</script>
 
 </body>
 </html>
-`0
